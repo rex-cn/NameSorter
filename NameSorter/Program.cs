@@ -47,9 +47,6 @@ namespace NameSorter
                     nameSorterAction.WriteFile(sortedNameListFileName, nameList);
                 }
             }
-
-            //wait for a key press
-            Console.ReadKey();
         }
     }
 
