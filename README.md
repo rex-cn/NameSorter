@@ -1,5 +1,5 @@
 
-NameSorter is just a sample project and used for interviewing only.
+<h1>NameSorter is just a sample project and used for interviewing only.</h1>
 
 <h2>The Goal: Name Sorter</h2>
     <p>Build a name sorter. Given a set of names, order that set first by last name, then by any given names the person may have. A
