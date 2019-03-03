@@ -67,8 +67,7 @@ namespace NameSorter
                 }
                 else
                 {
-                    name = name.Trim();
-                    if(name!="") nameList.Add(name);
+                    if(name!="") nameList.Add(FormatName(name));
                 }
             }
             //release memory
@@ -95,9 +94,6 @@ namespace NameSorter
         /// <returns></returns>
         public int Compare(string name1, string name2)
         {
-            //format name string
-            name1 = FormatName(name1);
-            name2 = FormatName(name2);
             //analyze 2 names and get 2 lastNames and 2 givenNames
             string lastName1 =GetLastName(name1), givenName1=GetGivenName(name1);
             string lastName2 = GetLastName(name2), givenName2 = GetGivenName(name2);
