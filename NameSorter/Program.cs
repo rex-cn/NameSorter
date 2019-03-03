@@ -19,6 +19,8 @@ namespace NameSorter
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            const string sortedNameListFileName = "./sorted-names-list.txt";
+
             //if no filename provided, write a error message on console.
             if (args.Length == 0)
             {
@@ -42,6 +44,7 @@ namespace NameSorter
                     nameList.Sort(nameSorterAction);
                     //write sorted namelist on console;
                     nameSorterAction.OutputResult(nameList);
+                    nameSorterAction.WriteFile(sortedNameListFileName, nameList);
                 }
             }
 
@@ -52,6 +55,11 @@ namespace NameSorter
 
     public class NameSorterAction :IComparer<string>
     {
+        /// <summary>
+        /// read the designated file into memory
+        /// </summary>
+        /// <param name="fileName">designated filename</param>
+        /// <returns>Return the name list</returns>
         public List<string> ReadFile(string fileName)
         {
             var nameList = new List<string>();
@@ -74,6 +82,23 @@ namespace NameSorter
             nameFileReader.Close();
             nameFileReader.Dispose();
             return nameList;
+        }
+
+        /// <summary>
+        /// write the name list into designated file
+        /// </summary>
+        /// <param name="fileName">designated filename</param>
+        /// <returns>Return the name list</returns>
+        public void WriteFile(string fileName,IList<string> nameList)
+        {
+            StreamWriter nameFileWriter = new StreamWriter(fileName);
+            foreach(var name in nameList)
+            {
+                nameFileWriter.WriteLine(name);
+            }
+            //release memory
+            nameFileWriter.Close();
+            nameFileWriter.Dispose();
         }
 
         /// <summary>
