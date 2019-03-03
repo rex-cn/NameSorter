@@ -35,4 +35,4 @@
             <li>Frankie Conner Ritter</li>
             <li>Shelby Nathan Yoder</li>
     </ul>
-<p>and a file in the working directory called sorted-names-list.txt containing the sorted names</p>
+<p>and a file in the working directory called <strong>sorted-names-list.txt</strong> containing the sorted names</p>
